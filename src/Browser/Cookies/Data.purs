@@ -36,6 +36,8 @@ derive instance eqSamesite :: Eq SameSite
 -- | secure, httpOnly: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies#Secure_and_HttpOnly_cookies
 -- | samesite: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies
 -- | domain, path: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies#Scope_of_cookies
+-- |
+-- | Note that you cannot set cookie with httpOnly to `document.cookies` - browser will just ignore operation
 newtype CookieOpts = CookieOpts {
     maxAge :: Maybe Number
   , expires :: Maybe JSDate
